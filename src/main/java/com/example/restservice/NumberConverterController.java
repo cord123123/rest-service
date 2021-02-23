@@ -10,8 +10,12 @@ import org.springframework.web.server.ResponseStatusException;
 @RestController
 public class NumberConverterController {
 
-    @Autowired
     private NumberConverterService service;
+
+    @Autowired
+    public NumberConverterController(NumberConverterService service) {
+        this.service = service;
+    }
 
     @GetMapping("/number_converter")
     public String convertNumber(@RequestParam int number,

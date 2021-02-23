@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class NumberConverterService {
-    private static final String[] romanSigns = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "LD", "D", "LM", "M"};
+    private static final String[] romanSigns = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
     private static final int[] romanSignsIntEquivalents = {1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
 
     private String intToRoman(int input) throws RomanNumberOutOfRangeException {
@@ -34,13 +34,13 @@ public class NumberConverterService {
 
 }
 
-class NumericSystemNotSupported extends Exception {
+class NumericSystemNotSupported extends IllegalArgumentException {
     NumericSystemNotSupported() {
         super("Numeric system not supported.");
     }
 }
 
-class RomanNumberOutOfRangeException extends Exception {
+class RomanNumberOutOfRangeException extends IllegalArgumentException {
     RomanNumberOutOfRangeException(int number) {
         super(number + " not in valid range (1-3999)");
     }
