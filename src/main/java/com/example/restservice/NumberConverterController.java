@@ -21,10 +21,6 @@ public class NumberConverterController {
     }
 
     @Operation(summary = "Convert integer number different numeric system.")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Calculated."),
-            @ApiResponse(responseCode = "400", description = "Invalid data supplied.")
-    })
     @GetMapping("/number_converter")
     public String convertNumber(@Parameter(description = "Int number to convert.") @RequestParam int number,
                                 @Parameter(description = "Numeric system {roman,hex}.") @RequestParam String system) {

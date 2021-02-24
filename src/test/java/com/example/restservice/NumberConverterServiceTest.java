@@ -14,7 +14,6 @@ class NumberConverterServiceTest {
             service.getConvertedNumber("hexadecimal", 1);
             service.getConvertedNumber("empty", 1);
             service.getConvertedNumber("", 1);
-            service.getConvertedNumber("hexadecimal", 1);
         });
     }
 
